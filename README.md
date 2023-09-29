@@ -2,10 +2,10 @@
 
 ## Learning Goals
 
-- Understand how to communicate between client and server using fetch, and how
-  the server will process the request based on the URL, HTTP verb, and request
-  body
-- Debug common problems that occur as part of the request-response cycle
+-   Understand how to communicate between client and server using fetch, and how
+    the server will process the request based on the URL, HTTP verb, and request
+    body
+-   Debug common problems that occur as part of the request-response cycle
 
 ## Introduction
 
@@ -36,10 +36,10 @@ React application.
 
 In this application, we have the following features:
 
-- Display a list of all the toys
-- Add a new toy when the toy form is submitted
-- Update the number of likes for a toy
-- Donate a toy to Goodwill (and delete it from our database)
+-   Display a list of all the toys
+-   Add a new toy when the toy form is submitted
+-   Update the number of likes for a toy
+-   Donate a toy to Goodwill (and delete it from our database)
 
 The code is in place for all these features on our frontend, but there are some
 problems with our API! We're able to display all the toys, but the other three
@@ -60,14 +60,26 @@ developing your own process.
 
 ## Your Notes Here
 
-- Add a new toy when the toy form is submitted
+-   Add a new toy when the toy form is submitted
 
-  - How I debugged:
+    -   How I debugged:
+        -   Filled out toy form and clicked Create
+        -   500 error in browser console and network tab
+        -   That means the controller is not sending back the right information, open controller file
+        -   Type found in create function, should be Toy.create, instead it is Toys.create
 
-- Update the number of likes for a toy
+-   Update the number of likes for a toy
 
-  - How I debugged:
+    -   How I debugged:
+        -   Clicked Like button on a toy
+        -   Unexpected end of JSON input error in browser console
+        -   That means the back end is not sending back JSON, check controller file
+        -   Update function is missing render line
 
-- Donate a toy to Goodwill (and delete it from our database)
+-   Donate a toy to Goodwill (and delete it from our database)
 
-  - How I debugged:
+    -   How I debugged:
+    -   Clicked Donate button on a toy
+    -   Recieved 404 error in browser console, No Route Matches error in network tab
+    -   Means there is no DESTROY route
+    -   Add destroy route in routes file
